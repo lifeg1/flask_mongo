@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- {% for mess in get_flashed_messages() %} -->
+<div class="alert alert-danger" role="alert">
+  {{get_flashed_messages()[0]}}
+</div>
+<!-- {% endfor %} -->
+<h1>DELETE PAGE</h1>
+{% endblock %}

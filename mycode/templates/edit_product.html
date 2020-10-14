@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for mess in get_flashed_messages() %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>{{mess}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>  </button></div>
+ {% endfor %}
+
+
+
+      <div class="form-group">
+      <form method="POST">
+      {{form.hidden_tag()}}
+      <div class="form-group col-md-4">{{form.prd_code.label}}{{form.prd_code(class="form-control" ,value=rec['_id'],readonly=true)}}  </div>
+      <div class="form-group col-md-4">{{form.prd_name.label}} {{form.prd_name(class="form-control",value=rec['prd_name'])}}</div>
+      <div class="form-group col-md-4">{{form.unit.label}} {{form.unit(class="form-control",value=rec['unit'])}}</div>
+      <div class="form-group col-md-4">{{form.cat_name.label}} {{form.cat_name(class="form-control",value=rec['cat'])}}</div>
+      <div class="form-group col-md-8">{{form.submit(class="btn btn-primary btn-lg",value="UPDATE")}}</div>
+      </form>
+      <div>
+
+
+{% endblock %}
