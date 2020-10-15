@@ -4,7 +4,7 @@ from flask import render_template,url_for,redirect,request,flash
 from mycode.forms import Add_Product_Form
 # from mycode.utl import sqlcon
 from  pymongo import MongoClient,errors
-myclient = MongoClient("mongodb+srv://user:life12@cluster0.wlvs0.mongodb.net/prddatabase?retryWrites=true&w=majority")
+myclient = MongoClient("mongodb+srv://<user>:<password>@cluster0.wlvs0.mongodb.net/prddatabase?retryWrites=true&w=majority") #MongoDB Atlas connection url add username-password
 mydb=myclient.prddatabase
 mycol=mydb.product
 
@@ -79,4 +79,4 @@ def delete_product(cat,pcode):
 
 if __name__=='__main__':
     app.run(host='127.0.0.1',port=8000,debug=True)
-    # serve(app, host='127.0.0.1', port=5000)
+    # serve(app, host='127.0.0.1', port=5000)     #can run using Waitress in windows server 
